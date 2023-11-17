@@ -1,10 +1,10 @@
 #include "simpleshell.h"
 
 /**
- * _eputs - print an input string val
- * @strg: string to be printed
+ * _eputs - Print an input string to stderr.
+ * @strg: String to be printed.
  *
- * Return: return Nothing
+ * Return: Nothing.
  */
 void _eputs(char *strg)
 {
@@ -20,11 +20,10 @@ void _eputs(char *strg)
 }
 
 /**
- * _eputchar - the char c to stderr
- * @chr: the character to print
+ * _eputchar - Print the character to stderr.
+ * @chr: Character to print.
  *
- * Return: return 1 On success
- * On error, -1 is returned, and errno is set properly.
+ * Return: 1 on success, -1 on error (sets errno properly).
  */
 int _eputchar(char chr)
 {
@@ -42,12 +41,11 @@ int _eputchar(char chr)
 }
 
 /**
- * _putfd - writes the character chr to valfd
- * @chr: The char to print
- * @valfd: this is the filedescriptor to write into
+ * _putfd - Write the character to a file descriptor.
+ * @chr: The character to print.
+ * @valfd: File descriptor to write into.
  *
- * Return: Return 1 on success
- * On error, -1 is returned, and errno is set properly
+ * Return: 1 on success, -1 on error (sets errno properly).
  */
 int _putfd(char chr, int valfd)
 {
@@ -65,11 +63,11 @@ int _putfd(char chr, int valfd)
 }
 
 /**
- * _putsfd - prints an string value
- * @strg: this is the string to be printed
- * @valfd: the filedescriptor to write into
+ * _putsfd - Print a string to a file descriptor.
+ * @strg: The string to be printed.
+ * @valfd: File descriptor to write into.
  *
- * Return: the number of chars put
+ * Return: The number of characters written.
  */
 int _putsfd(char *strg, int valfd)
 {
