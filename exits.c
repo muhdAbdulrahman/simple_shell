@@ -1,11 +1,11 @@
 #include "simpleshell.h"
 
 /**
- **_strncpy - function to copy  string
- *@dest: destination to be copied to
- *@src: source string
- *@nm: number of char to be copied
- *Return: return the concatenated string
+ * _strncpy - Copy a string.
+ * @dest: Destination to be copied to.
+ * @src: Source string.
+ * @nm: Number of characters to be copied.
+ * Return: Return the concatenated string.
  */
 char *_strncpy(char *dest, char *src, int nm)
 {
@@ -31,11 +31,11 @@ char *_strncpy(char *dest, char *src, int nm)
 }
 
 /**
- **_strncat - concatenating two strings
- *@dest: first string
- *@src: second string
- *@nm: number of bytes to be used
- *Return: the concatenated string
+ * _strncat - Concatenate two strings.
+ * @dest: First string.
+ * @src: Second string.
+ * @nm: Number of bytes to be used.
+ * Return: The concatenated string.
  */
 char *_strncat(char *dest, char *src, int nm)
 {
@@ -58,10 +58,10 @@ char *_strncat(char *dest, char *src, int nm)
 }
 
 /**
- **_strchr - func to find a char in a string
- *@strg: string to be passed
- *@chr: the char to look for
- *Return: return (s) a pointer to the memory area s
+ * _strchr - Find a character in a string.
+ * @strg: String to be passed.
+ * @chr: The character to look for.
+ * Return: A pointer to the memory area s.
  */
 char *_strchr(char *strg, char chr)
 {
