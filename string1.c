@@ -1,11 +1,11 @@
 #include "simpleshell.h"
 
 /**
- * _strcpy - fxnto copy a string
- * @dest: destination
- * @src: source
+ * _strcpy - Copies a string.
+ * @dest: Destination.
+ * @src: Source.
  *
- * Return: return the pointer destination
+ * Return: Pointer to the destination.
  */
 char *_strcpy(char *dest, char *src)
 {
@@ -23,9 +23,10 @@ char *_strcpy(char *dest, char *src)
 }
 
 /**
- * _strdup - fxn to duplicate string
- * @str: string value
- * Return: return pointer to the duplicated string
+ * _strdup - Duplicates a string.
+ * @str: String value.
+ *
+ * Return: Pointer to the duplicated string.
  */
 char *_strdup(const char *str)
 {
@@ -45,10 +46,10 @@ char *_strdup(const char *str)
 }
 
 /**
- * _puts - put fxn put string
- * @str: tring
+ * _puts - Puts a string.
+ * @str: String.
  *
- * Return: return Null
+ * Return: Null.
  */
 void _puts(char *str)
 {
@@ -64,11 +65,10 @@ void _puts(char *str)
 }
 
 /**
- * _putchar - putcher writecharacter c to stdout
- * @c: The char
+ * _putchar - Writes a character to stdout.
+ * @c: The character.
  *
- * Return: return 1 On success
- * On error, -1 is returned, and errno is set properly
+ * Return: 1 on success. On error, -1 is returned, and errno is set properly.
  */
 int _putchar(char c)
 {
