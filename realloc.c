@@ -1,11 +1,12 @@
 #include "simpleshell.h"
 
 /**
- * _memset - fill memory with a consistent byte
- * @s: the pointer to the memory part
- * @b: byte to fill the pointer with
- * @n: number of bytes to be inputed
- * Return: (s) a pointer to the memory area s
+ * _memset - Fills memory with a consistent byte.
+ * @s: Pointer to the memory area.
+ * @b: Byte to fill the memory with.
+ * @n: Number of bytes to be filled.
+ *
+ * Return: A pointer to the memory area s.
  */
 char *_memset(char *s, char b, unsigned int n)
 {
@@ -17,8 +18,8 @@ char *_memset(char *s, char b, unsigned int n)
 }
 
 /**
- * ffree - empty a string of strings
- * @pp: string of strings
+ * ffree - Frees a string of strings.
+ * @pp: String of strings.
  */
 void ffree(char **pp)
 {
@@ -32,12 +33,12 @@ void ffree(char **pp)
 }
 
 /**
- * _realloc - fxn that re_allocate a block of memory
- * @ptr: pntr to the former malloc  block
- * @old_size: byte size of the former block
- * @new_size: byte size of the new block
+ * _realloc - Reallocates a block of memory.
+ * @ptr: Pointer to the former malloc block.
+ * @old_size: Byte size of the former block.
+ * @new_size: Byte size of the new block.
  *
- * Return: return pointer to null.
+ * Return: A pointer to null.
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
