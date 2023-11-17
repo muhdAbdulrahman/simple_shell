@@ -1,12 +1,12 @@
 #include "simpleshell.h"
 
 /**
- * is_chain - is present chararacter in buffer a chain delimeter
- * @info: parameter struct
- * @buf: the character buffer
- * @p: address of cur positn in bufer
+ * is_chain - Checks if the present character in the buffer is a chain delimiter.
+ * @info: Parameter struct.
+ * @buf: Character buffer.
+ * @p: Address of current position in buffer.
  *
- * Return: return 1 if chain delimeter, otherwise return 0
+ * Return: 1 if a chain delimiter, otherwise 0.
  */
 int is_chain(info_t *info, char *buf, size_t *p)
 {
@@ -36,14 +36,14 @@ int is_chain(info_t *info, char *buf, size_t *p)
 }
 
 /**
- * check_chain - fxncall to continue chaining based on prev status
- * @info: parameter struct
- * @buf: character buffer
- * @p: address of d buffer postn
- * @i: intial position in buffer
- * @len: the length of buffer
+ * check_chain - Function call to continue chaining based on previous status.
+ * @info: Parameter struct.
+ * @buf: Character buffer.
+ * @p: Address of the buffer position.
+ * @i: Initial position in buffer.
+ * @len: Length of the buffer.
  *
- * Return: return Void
+ * Return: Void.
  */
 void check_chain(info_t *info, char *buf, size_t *p, size_t i, size_t len)
 {
@@ -70,10 +70,10 @@ void check_chain(info_t *info, char *buf, size_t *p, size_t i, size_t len)
 }
 
 /**
- * replace_alias - replace aliase in tokenize string
- * @info: parameter struct
+ * replace_alias - Replaces alias in the tokenized string.
+ * @info: Parameter struct.
  *
- * Return: return 1 if replaced, return 0 if otherwise
+ * Return: 1 if replaced, 0 otherwise.
  */
 int replace_alias(info_t *info)
 {
@@ -99,10 +99,10 @@ int replace_alias(info_t *info)
 }
 
 /**
- * replace_vars - replaces vars in tokenized string
- * @info: parameter struct
+ * replace_vars - Replaces variables in the tokenized string.
+ * @info: Parameter struct.
  *
- * Return: return 1 if replaced, return 0 if otherwise
+ * Return: 1 if replaced, 0 otherwise.
  */
 int replace_vars(info_t *info)
 {
@@ -134,17 +134,16 @@ int replace_vars(info_t *info)
 			continue;
 		}
 		replace_string(&info->argv[i], _strdup(""));
-
 	}
 	return (0);
 }
 
 /**
- * replace_string - replace the string fxn
- * @old: old string  address
- * @new: newstring
+ * replace_string - Replaces the string.
+ * @old: Old string address.
+ * @new: New string.
  *
- * Return: return 1 if replaced, return 0 if otherwise
+ * Return: 1 if replaced, 0 otherwise.
  */
 int replace_string(char **old, char *new)
 {
