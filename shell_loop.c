@@ -1,11 +1,11 @@
 #include "simpleshell.h"
 
 /**
- * hsh - main shell loop
- * @info: parameter and return information structure
- * @av: the arg vector main()
+ * hsh - Main shell loop.
+ * @info: Parameter and return information structure.
+ * @av: The arg vector from main().
  *
- * Return: return 0 on success, else return 1 on error, or error code
+ * Return: 0 on success, else return 1 on error or error code.
  */
 int hsh(info_t *info, char **av)
 {
@@ -44,12 +44,13 @@ int hsh(info_t *info, char **av)
 }
 
 /**
- * find_builtin - fxn that locates a builtin cmd
- * @info: parameter and return information structure
+ * find_builtin - Locates a builtin cmd.
+ * @info: Parameter and return information structure.
+ *
  * Return: -1 if builtin not located,
  * 0 if builtin executed perfectly,
  * 1 if builtin is located but not successful,
- * 2 if the builtin signals exit()
+ * 2 if the builtin signals exit().
  */
 int find_builtin(info_t *info)
 {
@@ -77,9 +78,10 @@ int find_builtin(info_t *info)
 }
 
 /**
- * find_cmd - fxn dat find command in PATH
- * @info: parameter and return information structure
- * Return: return void
+ * find_cmd - Finds a command in PATH.
+ * @info: Parameter and return information structure.
+ *
+ * Return: void.
  */
 void find_cmd(info_t *info)
 {
@@ -118,9 +120,10 @@ void find_cmd(info_t *info)
 }
 
 /**
- * fork_cmd - forks an exec thread to run cmd
- * @info: parameter & return information structure
- * Return: return void
+ * fork_cmd - Forks an exec thread to run cmd.
+ * @info: Parameter and return information structure.
+ *
+ * Return: void.
  */
 void fork_cmd(info_t *info)
 {
