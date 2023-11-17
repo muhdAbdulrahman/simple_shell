@@ -13,7 +13,7 @@ void clear_info(info_t *info)
 }
 
 /**
- * set_info - Set the info_t struct.
+ * set_info - Set values in the info_t struct.
  * @info: Struct address.
  * @av: Argument vector.
  */
@@ -45,8 +45,8 @@ void set_info(info_t *info, char **av)
 
 /**
  * free_info - Free info_t struct fields.
- * @info: Struct address.
- * @fld: 1 if all fields are freed, 0 otherwise.
+ * @info: The address.
+ * @fld: Correct if all fields are freed.
  */
 void free_info(info_t *info, int fld)
 {
@@ -62,4 +62,12 @@ void free_info(info_t *info, int fld)
 		if (info->history)
 			free_list(&(info->history));
 		if (info->alias)
-
+			free_list(&(info->alias));
+		ffree(info->environ);
+		info->environ = NULL;
+		bfree((void **)info->cmd_buf);
+		if (info->readfd > 2)
+			close(info->readfd);
+		_putchar(BUF_FLUSH);
+	}
+}
