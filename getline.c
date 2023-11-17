@@ -1,12 +1,12 @@
 #include "simpleshell.h"
 
 /**
- * input_buf - function to buffer the chained commands
- * @info: parameter struct
- * @buf: buffer address of buffer
- * @len: address of variable len
+ * input_buf - Buffer the chained commands.
+ * @info: Parameter struct.
+ * @buf: Buffer address of buffer.
+ * @len: Address of variable len.
  *
- * Return: return the bytes reaad
+ * Return: Return the bytes read.
  */
 ssize_t input_buf(info_t *info, char **buf, size_t *len)
 {
@@ -43,10 +43,10 @@ ssize_t input_buf(info_t *info, char **buf, size_t *len)
 }
 
 /**
- * get_input - specified line minus newline
- * @info: parameter struct
+ * get_input - Return specified line minus newline.
+ * @info: Parameter struct.
  *
- * Return: return the bytes read
+ * Return: Return the bytes read.
  */
 ssize_t get_input(info_t *info)
 {
@@ -88,12 +88,12 @@ ssize_t get_input(info_t *info)
 }
 
 /**
- * read_buf - function to read buffer
- * @info: parameter struct
- * @buf: the buffer
- * @siz: the size
+ * read_buf - Read buffer.
+ * @info: Parameter struct.
+ * @buf: The buffer.
+ * @siz: The size.
  *
- * Return: return r
+ * Return: Return r.
  */
 ssize_t read_buf(info_t *info, char *buf, size_t *siz)
 {
@@ -108,12 +108,12 @@ ssize_t read_buf(info_t *info, char *buf, size_t *siz)
 }
 
 /**
- * _getline - fxn to next line of input from STDIN
- * @info: parameter struct
- * @ptr: address of pointer to buffer, preallocated or NULL
- * @length: size of preallocated ptr buffer if not NULL
+ * _getline - Get the next line of input from STDIN.
+ * @info: Parameter struct.
+ * @ptr: Address of pointer to buffer, preallocated or NULL.
+ * @length: Size of preallocated ptr buffer if not NULL.
  *
- * Return: return s
+ * Return: Return s.
  */
 int _getline(info_t *info, char **ptr, size_t *length)
 {
@@ -155,10 +155,10 @@ int _getline(info_t *info, char **ptr, size_t *length)
 }
 
 /**
- * sigintHandler - handle t0 block ctrl-C
- * @sig_num: signal number
+ * sigintHandler - Handle to block ctrl-C.
+ * @sig_num: Signal number.
  *
- * Return: return void
+ * Return: Return void.
  */
 void sigintHandler(__attribute__((unused))int sig_num)
 {
