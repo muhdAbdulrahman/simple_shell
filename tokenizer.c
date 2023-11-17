@@ -1,12 +1,12 @@
 #include "simpleshell.h"
 
 /**
- * **strtow - fxn split string into words n ignore repeated delm.
- * @str: input string
- * @d: delim string
- * Return: return a pointer to an array of strings, or NULL if void
+ * strtow - Splits a string into words, ignoring repeated delimiters.
+ * @str: Input string.
+ * @d: Delimiter string.
+ *
+ * Return: Pointer to an array of strings, or NULL if void.
  */
-
 char **strtow(char *str, char *d)
 {
 	int i, j, k, m, numwords = 0;
@@ -49,10 +49,11 @@ char **strtow(char *str, char *d)
 }
 
 /**
- * **strtow2 - string into words
- * @str: input string
- * @d: delimeter
- * Return: return a pointer to an array of strings, or NULL if failed
+ * strtow2 - Splits a string into words using a single delimiter.
+ * @str: Input string.
+ * @d: Delimiter.
+ *
+ * Return: Pointer to an array of strings, or NULL if failed.
  */
 char **strtow2(char *str, char d)
 {
@@ -63,7 +64,7 @@ char **strtow2(char *str, char d)
 		return (NULL);
 	for (i = 0; str[i] != '\0'; i++)
 		if ((str[i] != d && str[i + 1] == d) ||
-				    (str[i] != d && !str[i + 1]) || str[i + 1] == d)
+		    (str[i] != d && !str[i + 1]) || str[i + 1] == d)
 			numwords++;
 	if (numwords == 0)
 		return (NULL);
