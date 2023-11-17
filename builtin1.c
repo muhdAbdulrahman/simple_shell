@@ -1,9 +1,9 @@
 #include "simpleshell.h"
 
 /**
- * _myhistory - shows the history
- * @info: Struct having potential args.
- *  Return: Always return 0
+ * _myhistory - Display the history.
+ * @info: Struct containing potential args.
+ * Return: Always return 0.
  */
 int _myhistory(info_t *info)
 {
@@ -12,11 +12,10 @@ int _myhistory(info_t *info)
 }
 
 /**
- * unset_alias - set alias to a string value
- * @info: parameter struct
- * @str: string alias
- *
- * Return: Always return 0 on success, 1 if otherwise
+ * unset_alias - Unset alias to a string value.
+ * @info: Parameter struct.
+ * @str: String alias.
+ * Return: Always return 0 on success, 1 otherwise.
  */
 int unset_alias(info_t *info, char *str)
 {
@@ -35,11 +34,10 @@ int unset_alias(info_t *info, char *str)
 }
 
 /**
- * set_alias - set alias to a string value
- * @info: parameter struct
- * @str: string alias
- *
- * Return: Always return 0 on success, 1 on error
+ * set_alias - Set alias to a string value.
+ * @info: Parameter struct.
+ * @str: String alias.
+ * Return: Always return 0 on success, 1 on error.
  */
 int set_alias(info_t *info, char *str)
 {
@@ -56,10 +54,9 @@ int set_alias(info_t *info, char *str)
 }
 
 /**
- * print_alias - print alias string value
- * @node: alias node
- *
- * Return: Always return 0 on success, 1 if void
+ * print_alias - Print alias string value.
+ * @node: Alias node.
+ * Return: Always return 0 on success, 1 if void.
  */
 int print_alias(list_t *node)
 {
@@ -69,7 +66,7 @@ int print_alias(list_t *node)
 	{
 		a = _strchr(node->str, '=');
 		for (c = node->str; c <= a; c++)
-		_putchar(*c);
+			_putchar(*c);
 		_putchar('\'');
 		_puts(a + 1);
 		_puts("'\n");
@@ -79,9 +76,9 @@ int print_alias(list_t *node)
 }
 
 /**
- * _myalias - funtion that copies the alias builtin
- * @info: Struct having potential args.
- *  Return: Always return 0
+ * _myalias - Function that copies the alias builtin.
+ * @info: Struct containing potential args.
+ * Return: Always return 0.
  */
 int _myalias(info_t *info)
 {
