@@ -1,8 +1,8 @@
 #include "simpleshell.h"
 
 /**
- * clear_info - function to initialize info_t struct
- * @info: struct address
+ * clear_info - Initialize the info_t struct.
+ * @info: Struct address.
  */
 void clear_info(info_t *info)
 {
@@ -13,9 +13,9 @@ void clear_info(info_t *info)
 }
 
 /**
- * set_info - funtcion to set info_t struct
- * @info: struct address
- * @av: the argument vector
+ * set_info - Set the info_t struct.
+ * @info: Struct address.
+ * @av: Argument vector.
  */
 void set_info(info_t *info, char **av)
 {
@@ -44,9 +44,9 @@ void set_info(info_t *info, char **av)
 }
 
 /**
- * free_info - free info_t struct fields
- * @info: the address
- * @fld: correct if all fields are freed
+ * free_info - Free info_t struct fields.
+ * @info: Struct address.
+ * @fld: 1 if all fields are freed, 0 otherwise.
  */
 void free_info(info_t *info, int fld)
 {
@@ -62,12 +62,4 @@ void free_info(info_t *info, int fld)
 		if (info->history)
 			free_list(&(info->history));
 		if (info->alias)
-			free_list(&(info->alias));
-		ffree(info->environ);
-			info->environ = NULL;
-		bfree((void **)info->cmd_buf);
-		if (info->readfd > 2)
-			close(info->readfd);
-		_putchar(BUF_FLUSH);
-	}
-}
+
