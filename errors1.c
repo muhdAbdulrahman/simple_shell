@@ -1,10 +1,9 @@
 #include "simpleshell.h"
 
 /**
- * _erratoi - function that converts a string to an integer
- * @strg: the string to be changed
- * Return: return 0 if no numbers in string, converted number otherwise
- * -1 on error
+ * _erratoi - Convert a string to an integer.
+ * @strg: The string to be converted.
+ * Return: 0 if no numbers in the string, converted number otherwise, -1 on error.
  */
 int _erratoi(char *strg)
 {
@@ -13,7 +12,7 @@ int _erratoi(char *strg)
 
 	if (*strg == '+')
 		strg++;
-	for (i = 0;  strg[i] != '\0'; i++)
+	for (i = 0; strg[i] != '\0'; i++)
 	{
 		if (strg[i] >= '0' && strg[i] <= '9')
 		{
@@ -29,11 +28,9 @@ int _erratoi(char *strg)
 }
 
 /**
- * print_error - print error message
- * @info: the parameter and the return info struct
- * @estr: string stores the exact error type
- * Return: return 0 if no numbers in string, changed number otherwise
- * -1 on error
+ * print_error - Print an error message.
+ * @info: The parameter and the return info struct.
+ * @estr: String storing the exact error type.
  */
 void print_error(info_t *info, char *estr)
 {
@@ -47,11 +44,10 @@ void print_error(info_t *info, char *estr)
 }
 
 /**
- * print_d - function that print a decimal
- * @input: input val
- * @valfd: file_descriptor to write to
- *
- * Return: return number of char printed
+ * print_d - Print a decimal number.
+ * @input: The input value.
+ * @valfd: File descriptor to write to.
+ * Return: Number of characters printed.
  */
 int print_d(int input, int valfd)
 {
@@ -86,12 +82,11 @@ int print_d(int input, int valfd)
 }
 
 /**
- * convert_number - number converter function
- * @num: number
- * @base: base
- * @flags: argument flags
- *
- * Return: return string
+ * convert_number - Number converter function.
+ * @num: Number.
+ * @base: Base.
+ * @flags: Argument flags.
+ * Return: Return a string.
  */
 char *convert_number(long int num, int base, int flags)
 {
@@ -105,13 +100,12 @@ char *convert_number(long int num, int base, int flags)
 	{
 		n = -num;
 		sign = '-';
-
 	}
 	array = flags & CONVERT_LOWERCASE ? "0123456789abcdef" : "0123456789ABCDEF";
 	ptr = &buffer[49];
 	*ptr = '\0';
 
-	do	{
+	do {
 		*--ptr = array[n % base];
 		n /= base;
 	} while (n != 0);
@@ -122,10 +116,8 @@ char *convert_number(long int num, int base, int flags)
 }
 
 /**
- * remove_comments - function that replace comment with '\0'
- * @buf: address of the string to modify
- *
- * Return: Always return 0;
+ * remove_comments - Replace comments with '\0'.
+ * @buf: Address of the string to modify.
  */
 void remove_comments(char *buf)
 {
