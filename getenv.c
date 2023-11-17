@@ -1,9 +1,9 @@
 #include "simpleshell.h"
 
 /**
- * get_environ - function that return array of string
- * @info: Struct havinging potential args
- * Return: Always return 0
+ * get_environ - Return an array of strings.
+ * @info: Struct containing potential args.
+ * Return: Always return 0.
  */
 char **get_environ(info_t *info)
 {
@@ -17,10 +17,10 @@ char **get_environ(info_t *info)
 }
 
 /**
- * _unsetenv - Remove environ variable
- * @info: Struct having potential args
- * Return: 1 on delete, otherwise return 0
- * @var: the string env variable property
+ * _unsetenv - Remove an environment variable.
+ * @info: Struct containing potential args.
+ * @var: The string environment variable property.
+ * Return: 1 on delete, otherwise return 0.
  */
 int _unsetenv(info_t *info, char *var)
 {
@@ -48,11 +48,11 @@ int _unsetenv(info_t *info, char *var)
 }
 
 /**
- * _setenv - funtion to Initialize new env var or modify if exist
- * @info: Struct having potential args
- * @var: the string env var property
- * @value: the string env variable value
- *  Return: Always return 0
+ * _setenv - Initialize a new environment variable or modify if exists.
+ * @info: Struct containing potential args.
+ * @var: The string environment variable property.
+ * @value: The string environment variable value.
+ * Return: Always return 0.
  */
 int _setenv(info_t *info, char *var, char *value)
 {
