@@ -1,12 +1,11 @@
 #include "simpleshell.h"
 
 /**
- * get_history_file - fxn to get history file
- * @info: parameter struct info
+ * get_history_file - Function to get history file.
+ * @info: Parameter struct info.
  *
- * Return: return allocated string carrying history file
+ * Return: Return allocated string carrying history file.
  */
-
 char *get_history_file(info_t *info)
 {
 	char *buf, *dir;
@@ -25,10 +24,10 @@ char *get_history_file(info_t *info)
 }
 
 /**
- * write_history - history, to appends to a present file
- * @info: structure parameter struct
+ * write_history - Function to append history to a present file.
+ * @info: Structure parameter struct.
  *
- * Return: return 1 on success, otherwise return -1
+ * Return: Return 1 on success, otherwise return -1.
  */
 int write_history(info_t *info)
 {
@@ -54,10 +53,10 @@ int write_history(info_t *info)
 }
 
 /**
- * read_history - fxn that reads history from file
- * @info: this is the parameter struct
+ * read_history - Function that reads history from file.
+ * @info: This is the parameter struct.
  *
- * Return: return history count on success, otherwise return 0
+ * Return: Return history count on success, otherwise return 0.
  */
 int read_history(info_t *info)
 {
@@ -103,12 +102,12 @@ int read_history(info_t *info)
 }
 
 /**
- * build_history_list - fxn that include entry to a history linked list
+ * build_history_list - Function to include entry to a history linked list.
  * @info: Struct having potential args.
- * @buf: this is the buffer
- * @linecount: the hist linecount, history count
+ * @buf: This is the buffer.
+ * @linecount: The hist linecount, history count.
  *
- * Return: Always return 0
+ * Return: Always return 0.
  */
 int build_history_list(info_t *info, char *buf, int linecount)
 {
@@ -124,9 +123,10 @@ int build_history_list(info_t *info, char *buf, int linecount)
 }
 
 /**
- * renumber_history - fxn that renumbers the history linkedlist
- * @info: argument structure
- * Return: the new history count
+ * renumber_history - Function to renumber the history linked list.
+ * @info: Argument structure.
+ *
+ * Return: The new history count.
  */
 int renumber_history(info_t *info)
 {
