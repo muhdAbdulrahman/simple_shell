@@ -1,19 +1,18 @@
 #include "simpleshell.h"
 
 /**
- * _myexit - function to exit shell
- * @info: Struct that contains potential args
- * Return: exits when status
- * (0) if info.argv[0] != "exit"
+ * _myexit - Exit the shell.
+ * @info: Struct containing potential args.
+ * Return: Exits with status 0 if info.argv[0] != "exit".
  */
 int _myexit(info_t *info)
 {
-	int exitcheck;
+	int exit_check;
 
 	if (info->argv[1])
 	{
-		exitcheck = _erratoi(info->argv[1]);
-		if (exitcheck == -1)
+		exit_check = _erratoi(info->argv[1]);
+		if (exit_check == -1)
 		{
 			info->status = 2;
 			print_error(info, "Illegal number: ");
@@ -29,38 +28,38 @@ int _myexit(info_t *info)
 }
 
 /**
- * _mycd - will change the current dir of the process
- * @info: the Struct that contains potential args.
- * Return: Return 0 always
+ * _mycd - Change the current directory of the process.
+ * @info: Struct containing potential args.
+ * Return: Always returns 0.
  */
 int _mycd(info_t *info)
 {
-	char *strg, *dir, buffer[1024];
+	char *current_dir, *new_dir, buffer[1024];
 	int chdir_ret;
 
-	strg = getcwd(buffer, 1024);
-	if (!strg)
+	current_dir = getcwd(buffer, 1024);
+	if (!current_dir)
 		_puts("TODO: >>getcwd failure emsg here<<\n");
 	if (!info->argv[1])
 	{
-		dir = _getenv(info, "HOME=");
-		if (!dir)
+		new_dir = _getenv(info, "HOME=");
+		if (!new_dir)
 			chdir_ret = /* TODO: what should this be? */
-				chdir((dir = _getenv(info, "PWD=")) ? dir : "/");
+				chdir((new_dir = _getenv(info, "PWD=")) ? new_dir : "/");
 		else
-			chdir_ret = chdir(dir);
+			chdir_ret = chdir(new_dir);
 	}
 	else if (_strcmp(info->argv[1], "-") == 0)
 	{
 		if (!_getenv(info, "OLDPWD="))
 		{
-			_puts(strg);
+			_puts(current_dir);
 			_putchar('\n');
 			return (1);
 		}
 		_puts(_getenv(info, "OLDPWD=")), _putchar('\n');
 		chdir_ret = /* TODO: what should this be? */
-			chdir((dir = _getenv(info, "OLDPWD=")) ? dir : "/");
+			chdir((new_dir = _getenv(info, "OLDPWD=")) ? new_dir : "/");
 	}
 	else
 		chdir_ret = chdir(info->argv[1]);
@@ -78,9 +77,9 @@ int _mycd(info_t *info)
 }
 
 /**
- * _myhelp - changes the present dir of the process
- * @info: Struct having potential args
- * Return: Return 0 always
+ * _myhelp - Display help information (Not yet implemented).
+ * @info: Struct containing potential args.
+ * Return: Always returns 0.
  */
 int _myhelp(info_t *info)
 {
