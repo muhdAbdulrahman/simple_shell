@@ -1,11 +1,11 @@
 #include "simpleshell.h"
 
 /**
- * is_cmd - fxn to check if a file is an executable command
- * @info: parameter info struct
- * @path: file path
+ * is_cmd - Function to check if a file is an executable command.
+ * @info: Parameter info struct.
+ * @path: File path.
  *
- * Return: return 1 if true, otherwise return 0
+ * Return: 1 if true, otherwise return 0.
  */
 int is_cmd(info_t *info, char *path)
 {
@@ -23,12 +23,12 @@ int is_cmd(info_t *info, char *path)
 }
 
 /**
- * dup_chars - method that duplicate character
- * @pathstr: string path
- * @start: the start of the index
- * @stop: the end of the index
+ * dup_chars - Method that duplicates characters.
+ * @pathstr: String path.
+ * @start: The start index.
+ * @stop: The end index.
  *
- * Return: return the pointer to new buffer
+ * Return: Pointer to the new buffer.
  */
 char *dup_chars(char *pathstr, int start, int stop)
 {
@@ -43,12 +43,12 @@ char *dup_chars(char *pathstr, int start, int stop)
 }
 
 /**
- * find_path - search for d cmd in the PATH string
- * @info: information struct
- * @pathstr: string to path
- * @cmd: the cmd to find
+ * find_path - Search for a command in the PATH string.
+ * @info: Information struct.
+ * @pathstr: String representing the PATH.
+ * @cmd: The command to find.
  *
- * Return: return full path of cmd if found or void
+ * Return: Full path of the command if found, or NULL if not found.
  */
 char *find_path(info_t *info, char *pathstr, char *cmd)
 {
