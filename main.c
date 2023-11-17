@@ -1,44 +1,44 @@
 #include "simpleshell.h"
 
 /**
- * main - the entry point
- * @ac: argument count
- * @av: argument vector
+ * main - The entry point.
+ * @argc: Argument count.
+ * @argv: Argument vector.
  *
- * Return: return 0 on success, return 1 if void
+ * Return: 0 on success, 1 if void.
  */
-int main(int ac, char **av)
+int main(int argc, char **argv)
 {
-	info_t info[] = { INFO_INIT };
-	int valfd = 2;
+	info_t info[] = {INFO_INIT};
+	int file_descriptor = 2;
 
 	asm ("mov %1, %0\n\t"
 			"add $3, %0"
-			: "=r" (valfd)
-			: "r" (valfd));
+			: "=r" (file_descriptor)
+			: "r" (file_descriptor));
 
-	if (ac == 2)
+	if (argc == 2)
 	{
-		valfd = open(av[1], O_RDONLY);
-		if (valfd == -1)
+		file_descriptor = open(argv[1], O_RDONLY);
+		if (file_descriptor == -1)
 		{
 			if (errno == EACCES)
 				exit(126);
 			if (errno == ENOENT)
 			{
-				_eputs(av[0]);
+				_eputs(argv[0]);
 				_eputs(": 0: Can't open ");
-				_eputs(av[1]);
+				_eputs(argv[1]);
 				_eputchar('\n');
 				_eputchar(BUF_FLUSH);
 				exit(127);
 			}
 			return (EXIT_FAILURE);
 		}
-		info->readfd = valfd;
+		info->readfd = file_descriptor;
 	}
 	populate_env_list(info);
 	read_history(info);
-	hsh(info, av);
+	hsh(info, argv);
 	return (EXIT_SUCCESS);
 }
